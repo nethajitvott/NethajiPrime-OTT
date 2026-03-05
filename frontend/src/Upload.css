@@ -1,0 +1,184 @@
+/* Upload Page - Nethaji Prime Style */
+
+.upload-page {
+  min-height: 100vh;
+  background: #0f171e;
+  padding: 20px;
+}
+
+.upload-header {
+  text-align: center;
+  padding: 40px 20px 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.back-button {
+  background: transparent;
+  color: #00a8e1;
+  border: 2px solid #00a8e1;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  transition: all 0.3s;
+}
+
+.back-button:hover {
+  background: #00a8e1;
+  color: #fff;
+}
+
+.upload-header h1 {
+  font-size: 2.5em;
+  color: #00a8e1;
+  margin-bottom: 10px;
+}
+
+.upload-subtitle {
+  color: #ffd700;
+  font-size: 1.1em;
+}
+
+.upload-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  padding: 20px;
+}
+
+.upload-form {
+  background: #1a2633;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  background: #0f171e;
+  border: 1px solid #2a3643;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #00a8e1;
+}
+
+.file-input-wrapper {
+  position: relative;
+}
+
+.file-input-wrapper input[type="file"] {
+  cursor: pointer;
+}
+
+.file-name {
+  display: block;
+  color: #00a8e1;
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #00a8e1, #0096cc);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 10px;
+}
+
+.submit-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 168, 225, 0.4);
+}
+
+.submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.message {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.message.success {
+  background: rgba(19, 136, 8, 0.2);
+  border: 1px solid #138808;
+  color: #4ade80;
+}
+
+.message.error {
+  background: rgba(229, 9, 20, 0.2);
+  border: 1px solid #e50914;
+  color: #f87171;
+}
+
+.upload-instructions {
+  background: #1a2633;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.upload-instructions h3 {
+  color: #00a8e1;
+  margin-bottom: 15px;
+  font-size: 1.3em;
+}
+
+.upload-instructions ol {
+  color: #aaa;
+  line-height: 1.8;
+  padding-left: 20px;
+}
+
+.upload-instructions li {
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .upload-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .upload-header h1 {
+    font-size: 2em;
+  }
+}

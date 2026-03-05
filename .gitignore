@@ -1,0 +1,29 @@
+# Frontend dependencies
+frontend/node_modules/
+frontend/build/
+frontend/.env
+
+# Backend dependencies  
+Backend/venv/
+Backend/ENV/
+Backend/env/
+Backend/__pycache__/
+Backend/*.pyc
+
+# Environment variables (IMPORTANT!)
+.env
+*.env
+.env.local
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log*.mp4 
+*.backup 
