@@ -10,7 +10,7 @@ import AdminDashboard from './AdminDashboard';
 import netajiImage from './images/netaji.webp';
 import indiaFlagImage from './images/vecteezy_indian-holiday-background_29559614.jpg';
 
-const API_URL = 'http://localhost:8000';
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
 
 function App() {
   const [speeches, setSpeeches] = useState([]);
