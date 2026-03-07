@@ -23,19 +23,19 @@ function App() {
   useEffect(() => {
     fetchSpeeches();
     fetchCategories();
-    
+
     // Load user from localStorage
     const userData = localStorage.getItem('user');
-const token = localStorage.getItem('token');
-if (userData && token) {
-  try {
-    setUser(JSON.parse(userData));
-  } catch (e) {
-    // Invalid user data, clear it
-    localStorage.removeItem('user');
-    localStorage.removeItem('token');
-  }
-}
+    const token = localStorage.getItem('token');
+    if (userData && token) {
+      try {
+        setUser(JSON.parse(userData));
+      } catch (e) {
+        // Invalid user data, clear it
+        localStorage.removeItem('user');
+        localStorage.removeItem('token');
+      }
+    }
   }, []);
 
   const fetchSpeeches = async () => {
@@ -87,16 +87,16 @@ if (userData && token) {
         <Route path="/signup" element={<Signup />} />
         <Route path="/upload" element={<Upload />} />
         <Route path="/admin" element={<AdminDashboard />} />
-        
+
         <Route path="/" element={
           <div className="App">
             {/* Header */}
             <header className="App-header">
               <div className="header-left">
                 <div className="logo-container">
-                  <img 
-                    src={netajiImage} 
-                    alt="Netaji Subhas Chandra Bose" 
+                  <img
+                    src={netajiImage}
+                    alt="Netaji Subhas Chandra Bose"
                     className="netaji-logo"
                   />
                   <div className="logo-text">NETHAJI PRIME</div>
@@ -118,7 +118,7 @@ if (userData && token) {
                   />
                   <span className="search-icon">🔍</span>
                 </div>
-                
+
                 {user ? (
                   <div className="user-menu">
                     <span className="user-greeting">👤 {user.full_name || user.email}</span>
@@ -138,7 +138,7 @@ if (userData && token) {
             {/* Main Content */}
             <main className="main-content">
               {/* Indian Flag Banner */}
-              <div 
+              <div
                 className="indian-flag-banner"
                 style={{
                   backgroundImage: `url(${indiaFlagImage})`
@@ -167,7 +167,7 @@ if (userData && token) {
                 <h2 className="section-title">
                   {selectedCategory === 'All' ? 'All Videos' : selectedCategory}
                 </h2>
-                
+
                 {filteredSpeeches.length === 0 ? (
                   <div className="no-videos">
                     <h3>No videos found</h3>
@@ -185,7 +185,7 @@ if (userData && token) {
                           {speech.thumbnail_url ? (
                             <img src={speech.thumbnail_url} alt={speech.title} />
                           ) : (
-                            <video src={speech.video_url} muted></video>
+                            <video src={speech.video_url} muted playsInline preload="metadata"></video>
                           )}
                           <div className="video-duration">{formatDuration(speech.duration || 0)}</div>
                         </div>
@@ -216,6 +216,7 @@ if (userData && token) {
                     <video
                       controls
                       autoPlay
+                      playsInline
                       width="100%"
                     >
                       <source src={selectedSpeech.video_url} type="video/mp4" />
