@@ -215,8 +215,8 @@ function App() {
                   <div className="video-player">
                     <video
                       controls
-                      autoPlay
                       playsInline
+                      preload="auto"
                       width="100%"
                     >
                       <source src={selectedSpeech.video_url} type="video/mp4" />
