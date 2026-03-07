@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ReactPlayer from 'react-player';
 import './App.css';
 import Login from './Login';
 import Signup from './Signup';
@@ -213,15 +214,23 @@ function App() {
                     ×
                   </button>
                   <div className="video-player">
-                    <video
-                      controls
-                      playsInline
-                      preload="auto"
+                    <ReactPlayer
+                      url={selectedSpeech.video_url}
+                      controls={true}
+                      playing={false}
+                      volume={1}
+                      muted={false}
+                      playsinline={true}
                       width="100%"
-                    >
-                      <source src={selectedSpeech.video_url} type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
+                      height="auto"
+                      config={{
+                        file: {
+                          attributes: {
+                            controlsList: 'nodownload'
+                          }
+                        }
+                      }}
+                    />
                   </div>
                   <div className="video-details">
                     <h2>{selectedSpeech.title}</h2>
